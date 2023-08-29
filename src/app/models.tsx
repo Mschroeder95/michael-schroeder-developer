@@ -1,9 +1,9 @@
 export class PageSection {
-    id: string
+    cssClassName: string
     display: string
 
-    constructor(id: string, display: string) {
-        this.id = id
+    constructor(cssClassName: string, display: string) {
+        this.cssClassName = cssClassName
         this.display = display
     }
 }

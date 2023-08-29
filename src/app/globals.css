@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+html, body {
+    scroll-behavior: smooth;
+}
+
 @layer base {
     p {
         font-family: 'Inconsolata', monospace;

@@ -1,4 +1,5 @@
 import { PageSection } from "./models"
+import { easeInOutQuart } from "./shared"
 
 // ### Developer Info ###
 export const DEVELOPER_NAME = 'Michael Schroeder'
@@ -12,6 +13,15 @@ export const BLURB_1 = 'I build full stack applications with exceptional user ex
 
 
 // ## Page sections for scrolling behavior
-export const PageSections: PageSection[] = [
-    new PageSection('about-checkpoint', 'ABOUT')
+export const PAGE_SECTIONS: PageSection[] = [
+    new PageSection('about-checkpoint', 'ABOUT'),
+    new PageSection('experience-checkpoint', 'EXPERIENCE'),
+    new PageSection('projects-checkpoint', 'PROJECTS')
 ]
+
+
+// Other Settings
+export let scrollEasingsFunction = (t: number) => {
+    return easeInOutQuart(t)
+}
+
