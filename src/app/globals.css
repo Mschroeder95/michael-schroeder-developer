@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    p {
+        font-family: 'Inconsolata', monospace;
+    }
+}
+  
+  .ambient-occlusion {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    opacity: 0%;
+    opacity: 50%;
+    box-shadow: -.5px -.5px 300px 300px rgba(42, 64, 152, 0.25);
+    pointer-events: none;
+  }
