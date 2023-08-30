@@ -29,8 +29,6 @@ export default function Home() {
       setIsMobile(isMobileCheck())
     })
 
-    console.log(isMobile)
-
     document.addEventListener('mousemove', (event) => {
       const pointer: HTMLElement = document.querySelector('.ambient-occlusion') as HTMLElement;
       pointer.style.left = event.clientX + 'px'
@@ -60,17 +58,7 @@ export default function Home() {
 
   let mainContentHtml: React.JSX.Element[] = []
   PAGE_SECTIONS.forEach((section) => {
-    let sectionHTML = [
-      <p id={`${section.cssClassName}-header`} key={`home-${pageKey++}`} className={`${section.cssClassName} h-fit`}>{section.display}</p>,
-      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] mb-8 ${section.cssClassName}`}></div>,
-      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] mb-8 ${section.cssClassName}`}></div>,
-      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] mb-8 ${section.cssClassName}`}></div>,
-      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] mb-8 ${section.cssClassName}`}></div>,
-      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] mb-8 ${section.cssClassName}`}></div>,
-      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] mb-8 ${section.cssClassName}`}></div>,
-      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] mb-8`}></div>
-    ]
-    mainContentHtml = mainContentHtml.concat(sectionHTML)
+    mainContentHtml = mainContentHtml.concat(section.display(section.cssClassName))
   })
   return (
     <main className={`flex ${isMobile ? 'flex-col' : 'flex-row'} justify-center bg-primary text-tertiary w-screen`}>
@@ -106,7 +94,7 @@ export default function Home() {
           <FontAwesomeIcon icon={faLinkedin} className="h-8 text-secondary/50 hover:text-secondary hover:cursor-pointer"></FontAwesomeIcon>
           <FontAwesomeIcon icon={faGithub} className="pl-4 h-8 text-secondary/50 hover:text-secondary hover:cursor-pointer"></FontAwesomeIcon>
       </div>
-      <div className={`flex flex-col p-8 pt-20 h-fit ${isMobile ? 'w-full m-auto' : 'w-[45vw] min-w-[40rem]'}`}>
+      <div className={`flex flex-col p-8 pt-20 h-fit ${isMobile ? 'w-full m-auto' : 'w-[35vw] min-w-[40rem]'}`}>
         {
           mainContentHtml
         }
@@ -116,6 +104,7 @@ export default function Home() {
 }
 
 function handleIntersectionEntry(entry: IntersectionObserverEntry, setCurrentSection: CallableFunction) {
+  console.log(entry)
   if(entry.isIntersecting) {
     let usableClassNames: string[] = []
     PAGE_SECTIONS.forEach((section) => {
@@ -150,7 +139,7 @@ function navigationHtml(currentSection: string, setCurrentSection: CallableFunct
       <div className={`flex flex-row items-center pr-8 h-5 ${selected ? divSelectedCss : divHoverCss}`} >
         <hr className='h-1 w-16' />
       </div>
-      <p className={selected ? pSelectedCss : pHoverCss}>{section.display}</p>
+      <p className={selected ? pSelectedCss : pHoverCss}>{section.displayName}</p>
     </div>
     )
   })
