@@ -93,7 +93,7 @@ export default function Home() {
             </div>
           </div>
       </div>
-      <div className={`fixed flex items-center flex-row left-0 bottom-0 h-10 w-screen h-fit ${isMobile? 'bg-primary/90': ''}`}>
+      <div className={`fixed flex items-center flex-row left-0 bottom-0 h-10 w-screen h-fit py-1 ${isMobile? 'bg-primary/90': ''}`}>
           <FontAwesomeIcon icon={faLinkedin} className="pl-4 h-8 text-secondary/50 hover:text-secondary hover:cursor-pointer"></FontAwesomeIcon>
           <FontAwesomeIcon icon={faGithub} className="pl-4 h-8 text-secondary/50 hover:text-secondary hover:cursor-pointer"></FontAwesomeIcon>
       </div>

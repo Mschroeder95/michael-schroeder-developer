@@ -82,8 +82,8 @@ export const PAGE_SECTIONS: PageSection[] = [
                 )
             })
             sectionHtml.push(
-                <div key={`'config-'${pageKey++}`} className={`flex flex-row h-fit hover:bg-primary/50 ${cssClassName}`}>
-                    <p key={`'config-'${pageKey++}`} className="pd-8">{exp.jobTitle} - {exp.end}</p>
+                <div key={`'config-'${pageKey++}`} className={`flex flex-row h-fit hover:bg-primary/50 pb-8 ${cssClassName}`}>
+                    <p key={`'config-'${pageKey++}`} className="pb-8">{exp.jobTitle} - {exp.end}</p>
                     <div key={`'config-'${pageKey++}`} className="flex flex-col">
                         <a key={`'config-'${pageKey++}`} className="pd-4" href={exp.url}><p key={`'config-'${pageKey++}`}>{exp.jobTitle}</p></a>
                         <p key={`'config-'${pageKey++}`} className="pd-4">{exp.description}</p>
