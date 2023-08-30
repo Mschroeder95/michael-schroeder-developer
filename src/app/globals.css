@@ -7,6 +7,17 @@
     p {
         font-family: 'Inconsolata', monospace;
     }
+
+}
+
+::selection {
+    background-color: rgba(69, 195, 197, 0.3);
+    color: #111729;
+}
+
+html {
+    background-color: #111729;
+
 }
   
   .ambient-occlusion {
@@ -14,8 +25,27 @@
     width: 1px;
     height: 1px;
     border-radius: 50%;
-    opacity: 0%;
     opacity: 50%;
-    box-shadow: -.5px -.5px 300px 300px rgba(42, 64, 152, 0.25);
+    box-shadow: -.5px -.5px 300px 300px rgba(69, 94, 197, 0.3);
+    pointer-events: none;
+  }
+
+  .ambient-occlusion-fixed-light {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    opacity: 25%;
+    box-shadow: -.5px -.5px 150px 150px rgba(99, 229, 216, 0.3);
+    pointer-events: none;
+  }
+
+  .ambient-occlusion-fixed-dark {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    opacity: 50%;
+    box-shadow: -.5px -.5px 200px 200px rgba(160, 37, 37, 0.3);
     pointer-events: none;
   }
