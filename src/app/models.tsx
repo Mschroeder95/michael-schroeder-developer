@@ -29,3 +29,19 @@ export class Experience {
         this. tools = tools
     }
 }
+
+export class Project {
+    title: string
+    url: string
+    imageSrc: string
+    tools: string[]
+    description: string
+
+    constructor(title: string, url: string, imageSrc: string, tools: string[], description: string) {
+        this.title = title
+        this.url = url
+        this.imageSrc = imageSrc
+        this.tools = tools
+        this.description = description
+    }
+}

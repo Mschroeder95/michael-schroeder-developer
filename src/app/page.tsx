@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { isMobileCheck } from "./shared";
-import { BLURB_1, DEVELOPER_NAME, EMPLOYER_WEBSITE_URL, EMPLOYMENT_TAG_LINE, PAGE_SECTIONS, scrollEasingsFunction } from "./app-config";
+import { BLURB_1, DEVELOPER_NAME, EMPLOYER_WEBSITE_URL, EMPLOYMENT_TAG_LINE, GITHUB_URL, LINKED_IN_URL, PAGE_SECTIONS, scrollEasingsFunction } from "./app-config";
 import animateScrollTo from "animated-scroll-to";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 let mousePositionY: number = 0
 let intersectionObserver: IntersectionObserver | undefined = undefined
 let pageKey = 0
+
 
 export default function Home() {
   const [isPageScrolled, setIsPageScrolled] = useState(false)
@@ -94,8 +95,16 @@ export default function Home() {
           </div>
       </div>
       <div className={`fixed flex items-center flex-row left-0 bottom-0 h-10 w-screen h-fit py-1 ${isMobile? 'bg-primary/90': ''}`}>
-          <FontAwesomeIcon icon={faLinkedin} className="pl-4 h-8 text-secondary/50 hover:text-secondary hover:cursor-pointer"></FontAwesomeIcon>
-          <FontAwesomeIcon icon={faGithub} className="pl-4 h-8 text-secondary/50 hover:text-secondary hover:cursor-pointer"></FontAwesomeIcon>
+          <FontAwesomeIcon icon={faLinkedin} className="pl-4 h-8 text-secondary/50 hover:text-secondary hover:cursor-pointer" onClick={
+            () => {
+              window.location.href = LINKED_IN_URL
+            }
+          }></FontAwesomeIcon>
+          <FontAwesomeIcon icon={faGithub} className="pl-4 h-8 text-secondary/50 hover:text-secondary hover:cursor-pointer" onClick={
+            () => {
+              window.location.href = GITHUB_URL
+            }
+          }></FontAwesomeIcon>
       </div>
       <div className={`flex flex-col p-8 pt-20 h-fit ${isMobile ? 'w-full m-auto' : 'w-[35vw] min-w-[40rem]'}`}>
         {
