@@ -31,10 +31,10 @@ export const EXPERIENCE: Experience[] = [
         ]
     ),
     new Experience(
-        'Software Developer',
-        'https://www.uline.com',
-        'July 2020',
+        'Software Engineer',
+        'https://www.directsupply.com',
         'January 2022',
+        'Present',
         'Worked with various lines of business to developed Angular web applications and Java/Spring microservices. Our apps helped keep the business running efficiently.',
         [
             'Java',
