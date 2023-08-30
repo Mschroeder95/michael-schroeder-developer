@@ -5,7 +5,7 @@ export class PageSection {
     displayName: string
     display: (cssClassName: string) => React.JSX.Element[] | React.JSX.Element
 
-    constructor(cssClassName: string, displayName: string, display: (cssClassName: string) => React.JSX.Element[]) {
+    constructor(cssClassName: string, displayName: string, display: (cssClassName: string) => React.JSX.Element[] | React.JSX.Element) {
         this.cssClassName = cssClassName
         this.displayName = displayName
         this.display = display
