@@ -7,7 +7,7 @@ let pageKey = 0 // Do not touch
 export const DEVELOPER_NAME = 'Michael Schroeder'
 export const EMPLOYMENT_TAG_LINE =  'Full Stack Software Engineer at Direct Supply'
 export const GITHUB_URL = 'https://github.com/Mschroeder95'
-export const LINKED_IN_URL = 'www.linkedin.com/in/michael-schroeder-b5493b199'
+export const LINKED_IN_URL = 'https://www.linkedin.com/in/michael-schroeder-b5493b199'
 // To remove linking to employer, set to undefined
 export const EMPLOYER_WEBSITE_URL = 'https://www.directsupply.com/?utm_source=google&utm_medium=organic&utm_campaign=GMB' 
 export const BLURB_1 = 'I build full stack applications with exceptional user experience and solid infrastructure'
@@ -67,7 +67,8 @@ export const PROJECTS: Project[] = [
             'React',
             'Tailwind CSS'
         ], 
-        'A responsive website for a local bar & grill. Designed to be incredibly flexible and reusable for other small businesses.'),
+        'A responsive website for a local bar & grill. Designed to be incredibly flexible and reusable for other small businesses.'
+    ),
     new Project(
         'Concept Game',
         'https://youtu.be/uY1SxqblFFA',
@@ -92,7 +93,22 @@ export const PROJECTS: Project[] = [
             'React',
             'Tailwind CSS'
         ], 
-        'A responsive website for a local bakery. My Next.js code is so flexible and reusable that!'),
+        'A responsive website for a local bakery. My Next.js code is so flexible and reusable that!'
+    ),
+    new Project(
+        'THIS WEBSITE!',
+        'https://github.com/Mschroeder95/michael-schroeder-developer',
+        './images/project-4-peek.png',
+        [
+            'AWS',
+            'Next.js',
+            'Amplify',
+            'Typescript',
+            'React',
+            'Tailwind CSS'
+        ],
+        'If you want a personal website feel free to fork mine and update the app-config.tsx to match your info! SO EASY!'
+    )
 ]
 
 // ## Page sections for scrolling behavior
@@ -165,7 +181,7 @@ export const PAGE_SECTIONS: PageSection[] = [
             sectionHtml.push(
                 
                 <div className="flex flex-row items-center h-fit w-full rounded-xl pb-12">
-                    <img className={`w-[7rem] mr-4 rounded-lg transition-all hover:cursor-pointer ${hoverShadowCss}`} src={project.imageSrc} alt="" onClick={ () => {
+                    <img className={`w-[7rem] mr-4 rounded-lg border-solid border-2 border-secondary/20 hover:cursor-pointer ${hoverShadowCss}`} src={project.imageSrc} alt="" onClick={ () => {
                         window.location.href = project.url
                     }} />
                     <div className="flex flex-col">
