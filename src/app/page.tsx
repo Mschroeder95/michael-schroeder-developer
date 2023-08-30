@@ -63,6 +63,9 @@ export default function Home() {
   return (
     <main className={`flex ${isMobile ? 'flex-col' : 'flex-row'} justify-center bg-primary text-tertiary w-screen`}>
       <div className="ambient-occlusion"></div>
+      <div className="left-12 bottom-0 ambient-occlusion-fixed-light"></div>
+      <div className="right-0 top-0 ambient-occlusion-fixed-dark"></div>
+
         <div className={`sticky top-0 flex flex-col h-fit text-left ${isMobile ? 'w-screen bg-primary/75 p-2' : 'w-[25vw] min-w-[20rem] p-8 pt-20'}`}>
           <div>
             {
@@ -90,8 +93,8 @@ export default function Home() {
             </div>
           </div>
       </div>
-      <div className={`fixed flex items-center flex-row left-3 bottom-0 h-10 w-screen h-fit ${isMobile? 'bg-primary/90': ''}`}>
-          <FontAwesomeIcon icon={faLinkedin} className="h-8 text-secondary/50 hover:text-secondary hover:cursor-pointer"></FontAwesomeIcon>
+      <div className={`fixed flex items-center flex-row left-0 bottom-0 h-10 w-screen h-fit ${isMobile? 'bg-primary/90': ''}`}>
+          <FontAwesomeIcon icon={faLinkedin} className="pl-4 h-8 text-secondary/50 hover:text-secondary hover:cursor-pointer"></FontAwesomeIcon>
           <FontAwesomeIcon icon={faGithub} className="pl-4 h-8 text-secondary/50 hover:text-secondary hover:cursor-pointer"></FontAwesomeIcon>
       </div>
       <div className={`flex flex-col p-8 pt-20 h-fit ${isMobile ? 'w-full m-auto' : 'w-[35vw] min-w-[40rem]'}`}>
