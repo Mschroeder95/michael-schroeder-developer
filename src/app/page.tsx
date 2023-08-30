@@ -23,8 +23,11 @@ export default function Home() {
       pointer.style.top = (mousePositionY + scrollY) + 'px'
     })
     window.addEventListener('resize', () => {
+      console.log(window.innerWidth)
       setIsMobile(isMobileCheck())
     })
+
+    console.log(isMobile)
 
     document.addEventListener('mousemove', (event) => {
       const pointer: HTMLElement = document.querySelector('.ambient-occlusion') as HTMLElement;
@@ -56,35 +59,46 @@ export default function Home() {
   let mainContentHtml: React.JSX.Element[] = []
   PAGE_SECTIONS.forEach((section) => {
     let sectionHTML = [
-      <p id={`${section.cssClassName}-header`} key={`home-${pageKey++}`} className={section.cssClassName}>{section.display}</p>,
-      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] w-full m-16 ${section.cssClassName}`}></div>,
-      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] w-full m-16 ${section.cssClassName}`}></div>,
-      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] w-full m-16 ${section.cssClassName}`}></div>,
-      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] w-full m-16 ${section.cssClassName}`}></div>,
-      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] w-full m-16 ${section.cssClassName}`}></div>,
-      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] w-full m-16 ${section.cssClassName}`}></div>,
-      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] w-full m-16`}></div>
+      <p id={`${section.cssClassName}-header`} key={`home-${pageKey++}`} className={`${section.cssClassName} h-fit`}>{section.display}</p>,
+      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] mb-8 ${section.cssClassName}`}></div>,
+      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] mb-8 ${section.cssClassName}`}></div>,
+      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] mb-8 ${section.cssClassName}`}></div>,
+      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] mb-8 ${section.cssClassName}`}></div>,
+      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] mb-8 ${section.cssClassName}`}></div>,
+      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] mb-8 ${section.cssClassName}`}></div>,
+      <div key={`home-${pageKey++}`} className={`bg-secondary/50 rounded-lg h-[500px] mb-8`}></div>
     ]
     mainContentHtml = mainContentHtml.concat(sectionHTML)
   })
   return (
-    <main className="flex flex-row justify-center bg-primary text-tertiary w-screen h-fit">
+    <main className={`flex ${isMobile ? 'flex-col' : 'flex-row'} justify-center bg-primary text-tertiary w-screen h-fit `}>
       <div className="ambient-occlusion"></div>
-      <div className="sticky top-0 flex flex-col h-fit w-[20vw] pt-32">
-        <p className="text-6xl font-bold">{DEVELOPER_NAME}</p>
+      <div className={`sticky p-8 top-0 flex flex-col h-fit justify-center w-[20vw] text-left ${isMobile ? 'w-screen bg-primary/75 m-auto' : 'w-[25vw] min-w-[20rem] pt-20'}`}>
+        {
+          !isMobile &&
+          <p className={`text-6xl font-bold`}>{DEVELOPER_NAME}</p>
+        }
         {
           EMPLOYER_WEBSITE_URL ?
           <p className="text-xl font-semibold hover:cursor-pointer"><a href={EMPLOYER_WEBSITE_URL}>{EMPLOYMENT_TAG_LINE}</a></p>
           :
           <p className="text-xl font-semibold">{EMPLOYMENT_TAG_LINE}</p>
         }
-        <p className="text-xl font-semibold hover:cursor-pointer"><a href={EMPLOYER_WEBSITE_URL}>{EMPLOYMENT_TAG_LINE}</a></p>
-        <p className="text-lg font-thin text-tertiary/50">{BLURB_1}</p>
-        {
-          navigationHtml(currentSection, setCurrentSection)
-        }
+        <p className={`indent-6 font-thin text-tertiary/50 ${isMobile ? 'text-sm' : 'text-lg'}`}>{BLURB_1}</p>
+        <div className={`${isMobile ? 'flex flex-row justify-between' : ''}`}>
+          {
+            navigationHtml(currentSection, setCurrentSection)
+          }
+          {
+            isMobile &&
+            <div className="flex flex-row items-end">
+              <img className="h-16 px-2" src="./images/logo-transparent.png" alt="" />
+              <p>{DEVELOPER_NAME.substring(1)}</p>
+            </div>
+          }
+        </div>
       </div>
-      <div className="flex flex-col h-fit w-[40vw] m-8">
+      <div className={`flex flex-col p-8 pt-20 h-fit ${isMobile ? 'w-full m-auto' : 'w-[45vw] min-w-[40rem]'}`}>
         {
           mainContentHtml
         }
@@ -121,7 +135,8 @@ function navigationHtml(currentSection: string, setCurrentSection: CallableFunct
     navLinksHtml.push(
     <div className="flex flex-row items-center group hover:cursor-pointer" onClick={()=> {
       animateScrollTo(document.getElementById(`${section.cssClassName}-header`) as Element, {
-        easing: scrollEasingsFunction
+        easing: scrollEasingsFunction,
+        cancelOnUserAction: false
       })
     }}>
       <div className={`flex flex-row items-center pr-8 h-5 ${selected ? divSelectedCss : divHoverCss}`} >

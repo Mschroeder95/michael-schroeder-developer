@@ -3,14 +3,21 @@
 @tailwind utilities;
 
 
-html, body {
-    scroll-behavior: smooth;
-}
-
 @layer base {
     p {
         font-family: 'Inconsolata', monospace;
     }
+
+}
+
+::selection {
+    background-color: rgba(69, 195, 197, 0.3);
+    color: #111729;
+}
+
+html {
+    background-color: #111729;
+
 }
   
   .ambient-occlusion {
@@ -20,6 +27,6 @@ html, body {
     border-radius: 50%;
     opacity: 0%;
     opacity: 50%;
-    box-shadow: -.5px -.5px 300px 300px rgba(42, 64, 152, 0.25);
+    box-shadow: -.5px -.5px 300px 300px rgba(69, 94, 197, 0.3);
     pointer-events: none;
   }
