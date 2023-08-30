@@ -76,18 +76,22 @@ export const PAGE_SECTIONS: PageSection[] = [
             let toolsHtml: React.JSX.Element[] = []
             exp.tools.forEach((tool) => {
                 toolsHtml.push(
-                    <div className="bg-secondary/30 rounded-3xl m-1 px-1 w-fit h-fit">
+                    <div className="bg-secondary/30 rounded-3xl m-1 px-1 w-fit h-fit text-secondary">
                         <p className="">{tool}</p>
                     </div>
                 )
             })
             sectionHtml.push(
-                <div key={`'config-'${pageKey++}`} className={`flex flex-row h-fit hover:bg-primary/50 ${cssClassName}`}>
-                    <p key={`'config-'${pageKey++}`} className="pd-8">{exp.jobTitle} - {exp.end}</p>
+                <div key={`'config-'${pageKey++}`} className={`flex flex-row h-fit hover:bg-primary/50 mb-8 ${cssClassName}`}>
+                    <div className="flex flex-col justify-center w-[20rem] text-center mr-4">
+                        <p key={`'config-'${pageKey++}`} className="pd-8 text-tertiary/60 w-full">{exp.start}</p>
+                        <hr className="h-1 w-full" />
+                        <p key={`'config-'${pageKey++}`} className="pd-8 text-tertiary/60 w-full">{exp.end}</p>
+                    </div>
                     <div key={`'config-'${pageKey++}`} className="flex flex-col">
-                        <a key={`'config-'${pageKey++}`} className="pd-4" href={exp.url}><p key={`'config-'${pageKey++}`}>{exp.jobTitle}</p></a>
-                        <p key={`'config-'${pageKey++}`} className="pd-4">{exp.description}</p>
-                        <div key={`'config-'${pageKey++}`} className="flex flex-row flex-wrap">
+                        <a key={`'config-'${pageKey++}`} className="pd-4 font-bold text-xl" href={exp.url}><p key={`'config-'${pageKey++}`}>{exp.jobTitle}</p></a>
+                        <p key={`'config-'${pageKey++}`} className="pd-4 text-tertiary/60">{exp.description}</p>
+                        <div key={`'config-'${pageKey++}`} className="flex flex-row flex-wrap pt-3">
                             {
                                 toolsHtml
                             }
