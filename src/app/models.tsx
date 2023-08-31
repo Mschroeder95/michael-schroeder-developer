@@ -18,9 +18,9 @@ export class Experience {
     start: string
     end: string
     description: string
-    tools: string[]
+    tools: Tool[]
 
-    constructor(jobTitle: string, url: string, start: string, end: string, description: string, tools: string[]) {
+    constructor(jobTitle: string, url: string, start: string, end: string, description: string, tools: Tool[]) {
         this.jobTitle = jobTitle
         this.url = url
         this. start = start
@@ -34,14 +34,24 @@ export class Project {
     title: string
     url: string
     imageSrc: string
-    tools: string[]
+    tools: Tool[]
     description: string
 
-    constructor(title: string, url: string, imageSrc: string, tools: string[], description: string) {
+    constructor(title: string, url: string, imageSrc: string, tools: Tool[], description: string) {
         this.title = title
         this.url = url
         this.imageSrc = imageSrc
         this.tools = tools
         this.description = description
+    }
+}
+
+export class Tool {
+    displayText: string
+    toolUrl: string
+
+    constructor(displayText: string, toolUrl: string) {
+        this.displayText = displayText
+        this.toolUrl = toolUrl
     }
 }

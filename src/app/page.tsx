@@ -9,8 +9,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 let mousePositionY: number = 0
 let intersectionObserver: IntersectionObserver | undefined = undefined
-let pageKey = 0
-
 
 export default function Home() {
   const [isPageScrolled, setIsPageScrolled] = useState(false)
@@ -26,7 +24,6 @@ export default function Home() {
       pointer.style.top = (mousePositionY + scrollY) + 'px'
     })
     window.addEventListener('resize', () => {
-      console.log(window.innerWidth)
       setIsMobile(isMobileCheck())
     })
 
@@ -116,7 +113,6 @@ export default function Home() {
 }
 
 function handleIntersectionEntry(entry: IntersectionObserverEntry, setCurrentSection: CallableFunction) {
-  console.log(entry)
   if(entry.isIntersecting) {
     let usableClassNames: string[] = []
     PAGE_SECTIONS.forEach((section) => {
@@ -124,7 +120,6 @@ function handleIntersectionEntry(entry: IntersectionObserverEntry, setCurrentSec
     }) 
     Array.from(entry.target.classList).forEach((className) => {
       if(usableClassNames.includes(className)) {
-        console.log(className)
         setCurrentSection(className)
       }
     })
