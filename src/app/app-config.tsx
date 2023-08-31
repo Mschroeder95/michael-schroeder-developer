@@ -1,14 +1,17 @@
 import { Experience, PageSection, Project, Tool } from "./models"
-import { ArrowUpperRight, hoverLinkCss, hoverShadowCss } from "./shared"
+import { ArrowUpperRight, createToolChip, hoverLinkCss, hoverShadowCss } from "./shared"
 import { easeInOutQuart } from "./shared"
-let pageKey = 0 // Do not touch
+let pageKey = 0 // This increments for each element in lists to satisfy the React rules for unique Key
 
 
+
+// ####################
+// # Update Your Info #
+// ####################
 export const DEVELOPER_NAME = 'Michael Schroeder'
 export const EMPLOYMENT_TAG_LINE =  'Full Stack Software Engineer at Direct Supply'
 export const GITHUB_URL = 'https://github.com/Mschroeder95'
 export const LINKED_IN_URL = 'https://www.linkedin.com/in/michael-schroeder-b5493b199'
-// To remove linking to employer, set to undefined
 export const EMPLOYER_WEBSITE_URL = 'https://www.directsupply.com/?utm_source=google&utm_medium=organic&utm_campaign=GMB' 
 export const BLURB_1 = 'I build full stack applications with exceptional user experience and solid infrastructure'
 export const BIO: string[] = [
@@ -17,6 +20,9 @@ export const BIO: string[] = [
     'When I am not coding I am traveling with my wife, keeping up with friends online and dabbling in art/music.'
 ]
 
+// #############################################################################
+// # Add Tool Objects if there are any missing from technologies that you know #
+// #############################################################################
 export const PYTHON_TOOL: Tool = new Tool('python', 'https://www.python.org')
 export const AWS_TOOL: Tool = new Tool('aws', 'https://aws.amazon.com')
 export const SWIFT_TOOL: Tool = new Tool('swift', 'https://developer.apple.com/swift/')
@@ -43,6 +49,11 @@ export const GIMP_TOOL: Tool = new Tool('gimp', 'https://www.gimp.org')
 export const GITLAB_CI_CD_TOOL: Tool = new Tool('gitlab ci/cd', 'https://docs.gitlab.com/ee/ci/')
 export const AMPLIFY_TOOL: Tool = new Tool('amplify', 'https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwi4t43l4oWBAxX4bG8EHetCAmIYABAAGgJqZg&ae=2&gclid=Cj0KCQjw0bunBhD9ARIsAAZl0E0UNFH2WIAKpWsqqQ3xm3k4UAHqakOCVdLCCdAdQHXeEnut7LzXcysaArBrEALw_wcB&ohost=www.google.com&cid=CAESauD2_S8NvzxNUWwtnswtdky6rJSiPHyRPLT12QwCJJzsEv-BHGOnQr1NZ3hdhxQ8SkwexM-9Wo0Gq467Y_U_aybA2vAZTQt1nvgUA4vg4UgbbkxgkgEcL5O8jc2Y6YayOzH_OLtCXIcbji4&sig=AOD64_1BhHe_C36Qs29uw7YnhBJQBIl7pQ&q&adurl&ved=2ahUKEwia3IXl4oWBAxX5tIkEHUeUDEYQ0Qx6BAgIEAE&nis=8&dct=1')
 
+
+
+// ########################################################
+// # Create Experience Objects for the Experience section #
+// ########################################################
 export const EXPERIENCE: Experience[] = [
     new Experience(
         'Software Engineer - Direct Supply',
@@ -83,6 +94,9 @@ export const EXPERIENCE: Experience[] = [
 ]
 
 
+// ###################################################
+// # Create Project Objects for the Projects section #
+// ###################################################
 export const PROJECTS: Project[] = [
     new Project(
         'Fec\'s Place', 
@@ -140,7 +154,11 @@ export const PROJECTS: Project[] = [
     )
 ]
 
-// ## Page sections for scrolling behavior
+
+// Only if you want additional page sections
+// ###################################################################################
+// # Make PageSection Objects for more sections like About, Experience, and Projects #
+// ###################################################################################
 export const PAGE_SECTIONS: PageSection[] = [
     new PageSection('about-checkpoint', 'ABOUT', (cssClassName) => {
         let sectionHtml: React.JSX.Element[] = []
@@ -241,21 +259,14 @@ export const PAGE_SECTIONS: PageSection[] = [
     })
 ]
 
-function createToolChip(tool: Tool): React.JSX.Element {
-    return (
-        <div className={`bg-secondary/30 rounded-3xl m-1 px-2 w-fit h-fit text-secondary hover:cursor-pointer ${hoverShadowCss}`} onClick={
-            () => {
-                window.location.href = tool.toolUrl
-            }
-        }>
-            <p className="">{tool.displayText}</p>
-        </div>
-    )
-}
-
-
-// Other Settings
+// This function effects how the auto scroll feels when selecting a section
 export let scrollEasingsFunction = (t: number) => {
     return easeInOutQuart(t)
 }
+
+
+
+
+
+
 
