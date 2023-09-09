@@ -8,16 +8,16 @@ let pageKey = 0 // This increments for each element in lists to satisfy the Reac
 // ####################
 // # Update Your Info #
 // ####################
-export const DEVELOPER_NAME = 'Michael Schroeder'
-export const EMPLOYMENT_TAG_LINE =  'Full Stack Software Engineer at Direct Supply'
-export const GITHUB_URL = 'https://github.com/Mschroeder95'
-export const LINKED_IN_URL = 'https://www.linkedin.com/in/michael-schroeder-b5493b199'
-export const EMPLOYER_WEBSITE_URL = 'https://www.directsupply.com/?utm_source=google&utm_medium=organic&utm_campaign=GMB' 
-export const BLURB_1 = 'I build full stack applications with exceptional user experience and solid infrastructure'
+export const DEVELOPER_NAME = 'Connor Nagela'
+export const EMPLOYMENT_TAG_LINE =  'Software Engineer Intern at Direct Supply'
+export const GITHUB_URL = 'https://github.com/itscanner'
+export const LINKED_IN_URL = 'https://www.linkedin.com/in/connor-nagela'
+export const EMPLOYER_WEBSITE_URL = 'https://www.directsupply.com/' 
+export const BLURB_1 = 'Junior B.S. Computer Engineering, NCAA D3 Student-Athlete'
 export const BIO: string[] = [
-    'I began my developer journey in 2014 when I decided to start playing with c++. I found my passion in software development and learned so much on my own. I have come so far since those early days as I have a Bachelor\'s Degree in Computer Science from UW-Milwaukee, Machine Learning certificate from MSOE, and professional experience from Uline and Direct Supply.',
-    'My focus these days is maintaining and developing new features for DS Smart, a mobile application for assisted living facilities.',
-    'When I am not coding I am traveling with my wife, keeping up with friends online and dabbling in art/music.'
+    'I began my journey into computers in high school, where I had an aptitude for problem solving. During COVID, I decided to delve further into hardware which led me to pursue a degree in Computer Engineering',
+    'Currently I am working at Direct Supply as a Software Engineer Intern. I am working on DS Smart, a team that is developing a multi-platform medical device application. We help our customers increase the efficiency of their workflows.',
+    'When I am not coding I am either working out, playing video games, or thinking about the next excuse to spend tons of money on peripherals.'
 ]
 
 // #############################################################################
@@ -48,7 +48,16 @@ export const BLENDER: Tool = new Tool('blender', 'https://www.blender.org')
 export const GIMP_TOOL: Tool = new Tool('gimp', 'https://www.gimp.org')
 export const GITLAB_CI_CD_TOOL: Tool = new Tool('gitlab ci/cd', 'https://docs.gitlab.com/ee/ci/')
 export const AMPLIFY_TOOL: Tool = new Tool('amplify', 'https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwi4t43l4oWBAxX4bG8EHetCAmIYABAAGgJqZg&ae=2&gclid=Cj0KCQjw0bunBhD9ARIsAAZl0E0UNFH2WIAKpWsqqQ3xm3k4UAHqakOCVdLCCdAdQHXeEnut7LzXcysaArBrEALw_wcB&ohost=www.google.com&cid=CAESauD2_S8NvzxNUWwtnswtdky6rJSiPHyRPLT12QwCJJzsEv-BHGOnQr1NZ3hdhxQ8SkwexM-9Wo0Gq467Y_U_aybA2vAZTQt1nvgUA4vg4UgbbkxgkgEcL5O8jc2Y6YayOzH_OLtCXIcbji4&sig=AOD64_1BhHe_C36Qs29uw7YnhBJQBIl7pQ&q&adurl&ved=2ahUKEwia3IXl4oWBAxX5tIkEHUeUDEYQ0Qx6BAgIEAE&nis=8&dct=1')
-
+export const VIA_TOOL: Tool = new Tool('via', 'https://caniusevia.com')
+export const ELECTRONIC_DESIGN_TOOL = new Tool('electronic design', 'https://stackoverflow.com/')
+export const C_TOOL = new Tool('c', 'https://www.cprogramming.com/')
+export const SOLDERING_TOOL = new Tool('soldering', 'https://www.amazon.com/')
+export const EMBEDDED_C_TOOL = new Tool('embedded c', 'https://www.cprogramming.com/')
+export const VHDL_TOOL = new Tool('vhdl', 'https://www.intel.com/content/www/us/en/collections/products/fpga/software/downloads.html')
+export const QUARTUS_TOOL = new Tool('intel quartus', 'https://www.intel.com/content/www/us/en/collections/products/fpga/software/downloads.html')
+export const DIGITAL_DESIGN_TOOL = new Tool('digital design', 'https://www.intel.com/content/www/us/en/collections/products/fpga/software/downloads.html')
+export const MULTISIM_TOOL = new Tool('ni multisim', 'https://www.ni.com/en-us/support/downloads/software-products/download.multisim.html#369660')
+export const OBJECT_ORIENTED_TOOL = new Tool('object oriented', 'https://www.java.com/en/')
 
 
 // ########################################################
@@ -58,7 +67,7 @@ export const EXPERIENCE: Experience[] = [
     new Experience(
         'Software Engineer - Direct Supply',
         'https://www.directsupply.com',
-        'January 2022',
+        'March 2023',
         'Present',
         'Support and develop new features for a multi-platform medical device application. We help our customers increase the efficiency of their workflows.',
         [
@@ -72,24 +81,6 @@ export const EXPERIENCE: Experience[] = [
             NO_SQL_TOOL,
             GITLAB_CI_CD_TOOL
         ]
-    ),
-    new Experience(
-        'Software Developer - Uline',
-        'https://www.uline.com',
-        'July 2020',
-        'January 2022',
-        'Worked with various lines of business to develop Angular web applications and Java/Spring microservices. Our apps helped keep the business running efficiently.',
-        [
-            JAVA_TOOL,
-            SPRING_BOOT_TOOL,
-            ANGURLAR_TOOL,
-            JAVASCRIPT_TOOL,
-            TYPESCRIPT_TOOL,
-            PRIMEFLEX_TOOL,
-            SQL_TOOL,
-            JENKINS_TOOL,
-            AZURE_TOOL
-        ]
     )
 ]
 
@@ -99,58 +90,40 @@ export const EXPERIENCE: Experience[] = [
 // ###################################################
 export const PROJECTS: Project[] = [
     new Project(
-        'Fec\'s Place', 
-        'https://main.dg4tszwgq01x6.amplifyapp.com', 
-        './images/project-1-peek.png',
+        'Personal Peripherals',
+        '',
+        './images/project-2-peek.jpg',
         [
-            AWS_TOOL,
-            NEXTJS_TOOL,
-            AMPLIFY_TOOL,
-            TYPESCRIPT_TOOL,
-            REACT_TOOL,
-            TAILWIND_CSS_TOOL
-        ], 
-        'A responsive website for a local bar & grill. Designed to be incredibly flexible and reusable for other small businesses.'
+            VIA_TOOL,
+            ELECTRONIC_DESIGN_TOOL,
+            C_TOOL,
+            SOLDERING_TOOL
+        ],
+        'This is my hobby! I love to build and modify peripherals. I\'ve built multiple keyboards and mice. Modified them to my liking, and even created custom mouse shells. I\'m currently in the process of building a handwired keyboard with the goal of creating my own firmware.'
     ),
     new Project(
-        'Concept Game',
-        'https://youtu.be/uY1SxqblFFA',
+        'Number Guessing Game',
+        '',
         './images/project-2-peek.png',
         [
-            GODOT_4_TOOL,
-            BLENDER,
-            GIMP_TOOL,
-            PYTHON_TOOL
+            EMBEDDED_C_TOOL,
+            VHDL_TOOL,
+            QUARTUS_TOOL,
+            DIGITAL_DESIGN_TOOL,
+            MULTISIM_TOOL
         ],
-        'This game is a product of a lot of practice over the years. I started in Unity, switched to Unreal Engine, and then finally found my favorite game engine Godot. It is an open source game engine that has seemless integration with Blender (a 3D modeling tool). I made all the assets, models and wrote all the code myself!'
+        'This was a class project, but I had a lot of fun with it. I created a number guessing game on an STMF446 microcontroller. The game was played on a 7-segment display and the user input was taken from a keypad. The game was written in embedded C and the hardware was designed in VHDL.'
     ),
     new Project(
-        'Bodi\'s Bake Shop', 
-        'https://main.diujez1kchjfo.amplifyapp.com', 
-        './images/project-3-peek.png',
+        'momBot', 
+        'https://github.com/itscanner/momBot', 
+        './images/project-1-peek.jpg',
         [
-            AWS_TOOL,
-            NEXTJS_TOOL,
-            AMPLIFY_TOOL,
-            TYPESCRIPT_TOOL,
-            REACT_TOOL,
-            TAILWIND_CSS_TOOL
+            JAVA_TOOL,
+            OBJECT_ORIENTED_TOOL,
+            AWS_TOOL
         ], 
-        'A responsive website for a local bakery. My Next.js code is so flexible and reusable that!'
-    ),
-    new Project(
-        'THIS WEBSITE!',
-        'https://github.com/Mschroeder95/michael-schroeder-developer',
-        './images/project-4-peek.png',
-        [
-            AWS_TOOL,
-            NEXTJS_TOOL,
-            AMPLIFY_TOOL,
-            TYPESCRIPT_TOOL,
-            REACT_TOOL,
-            TAILWIND_CSS_TOOL
-        ],
-        'If you want a personal website feel free to fork mine and update the app-config.tsx to match your info! SO EASY!'
+        'A Discord bot that I made for my friends and I to use. It has a bunch of fun commands and was hosted on AWS'
     )
 ]
 
@@ -263,10 +236,3 @@ export const PAGE_SECTIONS: PageSection[] = [
 export let scrollEasingsFunction = (t: number) => {
     return easeInOutQuart(t)
 }
-
-
-
-
-
-
-
